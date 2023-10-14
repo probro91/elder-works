@@ -11,7 +11,7 @@ const Jobs = ({navigation}) => {
                         {jobList.map((data, key) => {
                             return (
                                 <View key={key}>
-                                    <Job data={data} />
+                                    <Job data={data} navigation = {navigation}/>
                                 </View>
                             );
                         })}

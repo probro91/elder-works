@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import Jobs from "./screens/Jobs";
-import JobDetails from "./screens/JobDetails";
+import Details from "./screens/Details";
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -14,7 +14,7 @@ export default class App extends React.Component {
         <NavigationContainer >
           <Stack.Navigator initialRouteName='Jobs'>
             <Stack.Screen name="Jobs" component={Jobs} options={{ headerShown: true }} />
-            <Stack.Screen name="JobDetails" component={JobDetails} options={{ headerShown: true }} />
+            <Stack.Screen name="Details" component={Details} options={{ headerShown: true }} />
           </Stack.Navigator>
         </NavigationContainer>
          

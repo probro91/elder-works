@@ -1,36 +1,45 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { withNavigation} from 'react-navigation'; 
+
 
 const Job = ({data, navigation}) => {
 
+
     const goToJobDetails = async (e) => {
-        navigation.navigate('Job', {data: data, navigation: navigation});
+        navigation.navigate('Details', {
+            data: data
+        });
     }
+
     return (
-        <View style = {styles.jobContainer} onClick = {goToJobDetails}>
-            <Text style={styles.baseText}>
-                <Text style={styles.titleText}>
-                    {data.company}{'\n'}
-                </Text>
-                <View style = {styles.payAndJob}>
-                    <View style = {styles.pay}>
+        <View style = {styles.jobContainer}>
+            <TouchableOpacity onPress = {goToJobDetails}>
+                <Text style={styles.baseText}>
+                    <Text style={styles.titleText}>
+                        {data.company}{'\n'}
+                    </Text>
+                    <View style = {styles.payAndJob}>
+                        <View style = {styles.pay}>
+                            <Text style = {{fontSize: 20}}>
+                                <Text>{"Pay: $"}</Text>
+                                <Text>{data.Pay}</Text>
+                            </Text>
+                        </View>
+                        <View style = {styles.job}>
+                            <Text style = {{fontSize: 20}}>
+                                <Text>{"Role: "}</Text>
+                                <Text>{data.Job}</Text>
+                            </Text>
+                        </View>
+                        </View>
                         <Text style = {{fontSize: 20}}>
-                            <Text>{"Pay: $"}</Text>
-                            <Text>{data.Pay}</Text>
+                            <Text>{"Location: "}</Text>
+                            <Text>{data.location}</Text>
                         </Text>
-                    </View>
-                    <View style = {styles.job}>
-                        <Text style = {{fontSize: 20}}>
-                            <Text>{"Role: "}</Text>
-                            <Text>{data.Job}</Text>
-                        </Text>
-                    </View>
-                </View>
-                <Text style = {{fontSize: 20}}>
-                    <Text>{"Location: "}</Text>
-                    <Text>{data.location}</Text>
                 </Text>
-            </Text>
+                </TouchableOpacity>
         </View>
     )
 };
@@ -68,4 +77,4 @@ const styles = StyleSheet.create({
 
     });
   
-export default Job;
+export default withNavigation(Job);
