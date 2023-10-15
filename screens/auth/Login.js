@@ -1,13 +1,13 @@
 import FIREBASE_AUTH from './FirebaseConfig';
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TextInput, ActivityIndicator, Button, KeyboardAvoidingView } from 'react-native';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword, getAuth } from 'firebase/auth';
 
 const Login = ({navigation}) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
-    const auth = FIREBASE_AUTH;
+    const auth = getAuth();
 
     const signIn = async () => {
         setLoading(true);
@@ -15,7 +15,7 @@ const Login = ({navigation}) => {
             const response = await signInWithEmailAndPassword(auth, email, password);
             setLoading(false);
         } catch (error) {
-            alert('Sign in failed: ' + error.message);
+            alert('Login failed: ' + error.message);
             setLoading(false);
         }
     };

@@ -7,13 +7,14 @@ import SignUp from "./screens/auth/SignUp";
 import React, {useState, useEffect} from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { User, onAuthStateChanged } from 'firebase/auth';
+import { User, getAuth, onAuthStateChanged } from 'firebase/auth';
 import FIREBASE_AUTH from './screens/auth/FirebaseConfig';
 import firebase from 'firebase/app';
+import createBottomTabNavigator from '@react-navigation/bottom-tabs';
 
 const Stack = createNativeStackNavigator();
 
-const InsideStack = createNativeStackNavigator();
+const InsideStack = createBottomTabNavigator();
 
 function InsideLayout() {
   return (
@@ -28,8 +29,9 @@ function InsideLayout() {
 export default function App() {
   const [user, setUser] = useState(null);
 
+  const auth = getAuth();
   useEffect(() => {
-    onAuthStateChanged(FIREBASE_AUTH, (user) => {
+    onAuthStateChanged(auth, (user) => {
       setUser(user);
     });
   }, []);
