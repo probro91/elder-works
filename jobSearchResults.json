@@ -1,1 +1,185 @@
-{}
+[
+  {
+    "job": {
+      "name": "projects/elderworks/jobs/120912960139731654",
+      "requisitionId": "GoogleEngineer-1234",
+      "title": "Software Engineer",
+      "description": "Software engineering position, not for the faint of heart.",
+      "addresses": [
+        "Atlanta, GA"
+      ],
+      "applicationInfo": {
+        "uris": [
+          "http://careers.google.com"
+        ]
+      },
+      "companyName": "projects/elderworks/companies/727a1fea-0cfd-4791-870f-a1f5f4c5dd15",
+      "compensationInfo": {
+        "entries": [
+          {
+            "type": "BASE",
+            "unit": "HOURLY",
+            "amount": {
+              "currencyCode": "USD",
+              "units": "40"
+            }
+          }
+        ]
+      },
+      "languageCode": "en",
+      "visibility": "ACCOUNT_ONLY",
+      "postingPublishTime": "2023-10-14T14:08:31.320Z",
+      "postingExpireTime": "2023-11-13T15:08:31.184Z",
+      "companyDisplayName": "Google",
+      "derivedInfo": {
+        "locations": [
+          {
+            "locationType": "STREET_ADDRESS",
+            "postalAddress": {
+              "regionCode": "US",
+              "postalCode": "30309",
+              "administrativeArea": "GA",
+              "locality": "Atlanta",
+              "addressLines": [
+                "1105 W Peachtree St NW, Atlanta, GA 30309, USA"
+              ]
+            },
+            "latLng": {
+              "latitude": 33.7849781,
+              "longitude": -84.3874366
+            },
+            "radiusInMiles": 7.977007328287805e-05
+          }
+        ]
+      },
+      "postingCreateTime": "2023-10-14T14:08:31.184Z",
+      "postingUpdateTime": "2023-10-14T19:18:56.845Z"
+    },
+    "jobSummary": "Software engineering position, not for the faint of heart.",
+    "jobTitleSnippet": "Software <b>Engineer</b>.",
+    "searchTextSnippet": "Software <b>engineering</b> position, not for the faint of heart.",
+    "commuteInfo": {}
+  },
+  {
+    "job": {
+      "name": "projects/elderworks/jobs/119654843959648966",
+      "requisitionId": "GoogleEngineer-1235",
+      "title": "Software Development Engineer",
+      "description": "Software engineering position, not for the faint of heart.",
+      "addresses": [
+        "Atlanta, GA"
+      ],
+      "applicationInfo": {
+        "uris": [
+          "http://careers.google.com"
+        ]
+      },
+      "companyName": "projects/elderworks/companies/727a1fea-0cfd-4791-870f-a1f5f4c5dd15",
+      "compensationInfo": {
+        "entries": [
+          {
+            "type": "BASE",
+            "unit": "HOURLY",
+            "amount": {
+              "currencyCode": "USD",
+              "units": "40"
+            }
+          }
+        ]
+      },
+      "languageCode": "en",
+      "visibility": "ACCOUNT_ONLY",
+      "postingPublishTime": "2023-10-14T14:41:55.423Z",
+      "postingExpireTime": "2023-11-13T15:41:55.305Z",
+      "companyDisplayName": "Google",
+      "derivedInfo": {
+        "locations": [
+          {
+            "locationType": "STREET_ADDRESS",
+            "postalAddress": {
+              "regionCode": "US",
+              "postalCode": "30309",
+              "administrativeArea": "GA",
+              "locality": "Atlanta",
+              "addressLines": [
+                "1105 W Peachtree St NW, Atlanta, GA 30309, USA"
+              ]
+            },
+            "latLng": {
+              "latitude": 33.7849781,
+              "longitude": -84.3874366
+            },
+            "radiusInMiles": 7.977007328287805e-05
+          }
+        ]
+      },
+      "postingCreateTime": "2023-10-14T14:41:55.305Z",
+      "postingUpdateTime": "2023-10-14T19:18:57.894Z"
+    },
+    "jobSummary": "Software engineering position, not for the faint of heart.",
+    "jobTitleSnippet": "Software Development <b>Engineer</b>.",
+    "searchTextSnippet": "Software <b>engineering</b> position, not for the faint of heart.",
+    "commuteInfo": {}
+  },
+  {
+    "job": {
+      "name": "projects/elderworks/jobs/78823380150559430",
+      "requisitionId": "GoogleEngineer-1236",
+      "title": "Software Development Engineer (Web)",
+      "description": "Software engineering position, not for the faint of heart.",
+      "addresses": [
+        "Atlanta, GA"
+      ],
+      "applicationInfo": {
+        "uris": [
+          "http://careers.google.com"
+        ]
+      },
+      "companyName": "projects/elderworks/companies/727a1fea-0cfd-4791-870f-a1f5f4c5dd15",
+      "compensationInfo": {
+        "entries": [
+          {
+            "type": "BASE",
+            "unit": "HOURLY",
+            "amount": {
+              "currencyCode": "USD",
+              "units": "40"
+            }
+          }
+        ]
+      },
+      "languageCode": "en",
+      "visibility": "ACCOUNT_ONLY",
+      "postingPublishTime": "2023-10-14T14:42:36.082Z",
+      "postingExpireTime": "2023-11-13T15:42:35.869Z",
+      "companyDisplayName": "Google",
+      "derivedInfo": {
+        "locations": [
+          {
+            "locationType": "STREET_ADDRESS",
+            "postalAddress": {
+              "regionCode": "US",
+              "postalCode": "30309",
+              "administrativeArea": "GA",
+              "locality": "Atlanta",
+              "addressLines": [
+                "1105 W Peachtree St NW, Atlanta, GA 30309, USA"
+              ]
+            },
+            "latLng": {
+              "latitude": 33.7849781,
+              "longitude": -84.3874366
+            },
+            "radiusInMiles": 7.977007328287805e-05
+          }
+        ]
+      },
+      "postingCreateTime": "2023-10-14T14:42:35.869Z",
+      "postingUpdateTime": "2023-10-14T19:18:59.194Z"
+    },
+    "jobSummary": "Software engineering position, not for the faint of heart.",
+    "jobTitleSnippet": "Software Development <b>Engineer</b> (Web)",
+    "searchTextSnippet": "Software <b>engineering</b> position, not for the faint of heart.",
+    "commuteInfo": {}
+  }
+]

@@ -18,25 +18,25 @@ const Job = ({data, navigation}) => {
             <TouchableOpacity onPress = {goToJobDetails}>
                 <Text style={styles.baseText}>
                     <Text style={styles.titleText}>
-                        {data.company}{'\n'}
+                        {data.job.companyDisplayName}{'\n'}
                     </Text>
                     <View style = {styles.payAndJob}>
                         <View style = {styles.pay}>
                             <Text style = {{fontSize: 20}}>
                                 <Text>{"Pay: $"}</Text>
-                                <Text>{data.Pay}</Text>
+                                <Text>{data.job.compensationInfo.entries[0].amount.units}</Text>
                             </Text>
                         </View>
                         <View style = {styles.job}>
                             <Text style = {{fontSize: 20}}>
                                 <Text>{"Role: "}</Text>
-                                <Text>{data.Job}</Text>
+                                <Text>{data.job.title}</Text>
                             </Text>
                         </View>
                         </View>
                         <Text style = {{fontSize: 20}}>
                             <Text>{"Location: "}</Text>
-                            <Text>{data.location}</Text>
+                            <Text>{data.job.addresses[0]}</Text>
                         </Text>
                 </Text>
                 </TouchableOpacity>

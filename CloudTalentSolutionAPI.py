@@ -1,11 +1,35 @@
 import os
 import json
+from flask import Flask, request, jsonify
+from flask_cors import CORS, cross_origin
 
 from googleapiclient.discovery import build
 from googleapiclient.errors import Error
 
+app = Flask(__name__)
+cors = CORS(app)
+
 client_service = build('jobs', 'v3')
 project_id = 'projects/' + os.environ['GOOGLE_CLOUD_PROJECT']
+
+@app.route('/', methods=['GET', 'POST'])
+@cross_origin(origin='*',headers=['Content-Type','Authorization'])
+def index():
+  if request.method == 'POST':
+    search_criteria = request.form
+    request_metadata = {
+      'user_id': 'HashedUserId',
+      'session_id': 'HashedSessionId',
+      'domain': 'careers.google.com',
+    }
+    filter_location = {
+      'address': search_criteria['location'],
+      'distanceInMiles': search_criteria['radius']
+    }
+    keyword = search_criteria['keyword']
+    job_search(request_metadata, keyword, filter_location)
+    print ('Job search complete')
+    return {'message': 'Job search complete'}
 
 def job_search(request_metadata, search_term, location_filter):
   try:
@@ -70,7 +94,7 @@ def list_jobs():
         jobs_response = client_service.projects().jobs().list(parent=project_id, filter='companyName="' + company.get('name') + '"').execute()
         if jobs_response.get('jobs') is not None:
           for job in jobs_response.get('jobs'):
-            print('\n%s: %s\n%s' % (job.get('title'), job.get('description'), job.get('addresses')[0]))
+            print('\n%s: %s\n%s\n%s' % (job.get('title'), job.get('description'), job.get('addresses')[0], job.get('compensationInfo')))
 
     else:
       print('No companies found.')
@@ -155,31 +179,46 @@ def get_job_names(job_names):
     raise e
 
 if __name__ == '__main__':
-  updated_job = {
+  app.run(host='http://localhost:3000',debug=True)
+  """
+    updated_job = {
     "addresses": [
-      'Reston, VA, US'
-    ]
+      'Atlanta, GA'
+    ],
+    'compensationInfo': {
+      'entries': [
+        {
+          'type': 'BASE',
+          'unit': 'HOURLY',
+          'amount': {
+            'currencyCode': 'USD',
+            'units': 40
+          }
+        }
+      ]
+    },
+    'description': 'Software engineering position, not for the faint of heart.'
   }
   
-  job_names = []
-  job_names = get_job_names(job_names)
-  for job_name in job_names:
-    update_job(job_name, updated_job, 'addresses')
+  #job_names = []
+  #job_names = get_job_names(job_names)
+  #for job_name in job_names:
+  #  update_job(job_name, updated_job, 'addresses, compensationInfo, description')
 
-  list_jobs()
+  #list_jobs()
   request_metadata = {
     'user_id': 'HashedUserId',
     'session_id': 'HashedSessionId',
     'domain': 'careers.google.com',
   }
   filter_location = {
-    'address': 'New York City, NY, US',
-    'distanceInMiles': 20
+    'address': 'Athens, GA',
+    'distanceInMiles': 50
   }
   keyword = 'engineer'
-  job_search(request_metadata, keyword, filter_location)
+  #job_search(request_metadata, keyword, filter_location)
 
-
+"""
 
 
 
