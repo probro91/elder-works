@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView, Button } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Button, Pressable } from 'react-native';
 
 const Details = ({route}) => {
     const data = route.params.data;
@@ -9,11 +9,13 @@ const Details = ({route}) => {
             <View style = {styles.jobContainer}>
                 <Text style={styles.baseText}>
                     <View style = {{flexDirection: "col"}}>
-                        <View style = {{flexDirection: "row"}}>
+                        <View style = {{flexDirection: "row", justifyContent: 'space-around'}}>
                             <Text style={styles.titleText}>
                                 {data.company}
                             </Text>
-                            <Button title = "Apply" style = {styles.buttonStyle} onPress = {() => {}}/>
+                            <Pressable style = {styles.buttonStyle} onPress = {() => {}}>
+                                <Text style = {{color: "white", fontSize: 25}}>Apply</Text>
+                            </Pressable>
                         </View>
                             
                         <Text style = {{fontSize: 30, paddingVertical: 5}}>
@@ -66,7 +68,13 @@ const styles = StyleSheet.create({
         
     },
     buttonStyle: {
-        float: "right",
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingVertical: 8,
+        paddingHorizontal: 20,
+        borderRadius: 4,
+        elevation: 3,
+        backgroundColor: 'green',
     }
 
     });
