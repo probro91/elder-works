@@ -14,7 +14,7 @@ import createBottomTabNavigator from '@react-navigation/bottom-tabs';
 
 const Stack = createNativeStackNavigator();
 
-const InsideStack = createBottomTabNavigator();
+const InsideStack = createNativeStackNavigator();
 
 function InsideLayout() {
   return (
